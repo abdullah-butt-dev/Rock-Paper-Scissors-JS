@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+
+  <script>
+
+    let humanScore = 0;
+    let computerScore = 0;
+
+    let humanChoice = getHumanChoice();
+    let computerChoice = getComputerChoice();
+
+    function getComputerChoice() {
+      let randomNo = Math.floor((Math.random() * 100) + 1);
+
+      if(randomNo >= 1 && randomNo <= 33) {
+        console.log("Rock");
+      }
+      
+      else if(randomNo >= 34 && randomNo <= 66) {
+        console.log("Paper");
+      }
+      
+      else {
+        console.log("Scissors");
+      }
+    }
+    
+    function getHumanChoice() {
+      const userChoice = prompt("Enter your choice: (Rock, Paper or Scissors)");
+      
+      if(userChoice === "Rock" || userChoice === "rock" ) {
+        console.log("User choice: Rock");
+      } 
+
+      else if(userChoice === "Paper" || userChoice === "paper" ) {
+        console.log("User choice: Paper");
+      } 
+
+      else if(userChoice === "Scissors" || userChoice === "scissors" ) {
+        console.log("User choice: Scissors");
+      } 
+
+    }
+
+  </script>
+</body>
+</html>
