@@ -20,15 +20,15 @@
       let randomNo = Math.floor((Math.random() * 100) + 1);
 
       if(randomNo >= 1 && randomNo <= 33) {
-        console.log("Rock");
+        return "Rock";
       }
       
       else if(randomNo >= 34 && randomNo <= 66) {
-        console.log("Paper");
+        return "Paper";
       }
       
       else {
-        console.log("Scissors");
+        return "Scissors";
       }
     }
     
@@ -36,15 +36,15 @@
       const userChoice = prompt("Enter your choice: (Rock, Paper or Scissors)");
       
       if(userChoice === "Rock" || userChoice === "rock" ) {
-        console.log("User choice: Rock");
+        return "Rock";
       } 
 
       else if(userChoice === "Paper" || userChoice === "paper" ) {
-        console.log("User choice: Paper");
+        return "Paper";
       } 
 
       else if(userChoice === "Scissors" || userChoice === "scissors" ) {
-        console.log("User choice: Scissors");
+        return "Scissors";
       } 
 
     }
