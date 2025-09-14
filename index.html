@@ -12,9 +12,7 @@
     let humanScore = 0;
     let computerScore = 0;
 
-    let humanChoice = getHumanChoice();
-    let computerChoice = getComputerChoice();
-    playRound(humanChoice, computerChoice);
+    playGame();
 
     function getComputerChoice() {
       let randomNo = Math.floor((Math.random() * 100) + 1);
@@ -54,7 +52,7 @@
       if((humanChoice === "Rock" && computerChoice === "Rock") 
       || (humanChoice === "Paper" && computerChoice === "Paper") 
       || (humanChoice === "Scissors" && computerChoice === "Scissors")) {
-        console.log(`Tie! ${humanChoice} = $(computerChoice}`);
+        console.log(`Tie! ${humanChoice} = ${computerChoice}`);
       }
 
       else if(humanChoice === "Rock" && computerChoice === "Paper") {
@@ -63,7 +61,7 @@
       }
 
       else if(humanChoice === "Rock" && computerChoice === "Scissors") {
-        humanChoice++;
+        humanScore++;
         console.log(`You win! ${humanChoice} beats ${computerChoice}`);
       }
 
@@ -73,7 +71,7 @@
       }
 
       else if(humanChoice === "Paper" && computerChoice === "Rock") {
-        humanChoice++;
+        humanScore++;
         console.log(`You win! ${humanChoice} beats ${computerChoice}`);
       }
 
@@ -83,10 +81,31 @@
       }
 
       else if(humanChoice === "Scissors" && computerChoice === "Paper") {
-        humanChoice++;
+        humanScore++;
         console.log(`You win! ${humanChoice} beats ${computerChoice}`);
       }
 
+    }
+
+    function playGame() {
+
+      for(let i = 1; i <= 5; i++) {
+        const humanChoice = getHumanChoice();
+        const computerChoice = getComputerChoice();
+        playRound(humanChoice, computerChoice);      
+      }
+
+      if(humanScore > computerScore) {
+        console.log(`Congratulations! You win the game.`);
+      }
+
+      else if(humanScore < computerScore) {
+        console.log(`Better luck next time! Computer win the game.`);  
+      }
+
+      else {
+        console.log(`It's a TIE!.`);  
+      }
     }
 
   </script>
