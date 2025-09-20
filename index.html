@@ -22,16 +22,14 @@
   const result = document.querySelector('.js-result');
   const score = document.querySelector('.js-score');
   
-  rockButton.addEventListener('click', playRound('Rock'))
-
-  paperButton.addEventListener('click', playRound('Paper'))
-  
-  scissorsButton.addEventListener('click', playRound('Scissors'))
-
-
   let humanScore = 0;
   let computerScore = 0;
 
+  rockButton.addEventListener('click', () => playRound('Rock'));
+
+  paperButton.addEventListener('click', () => playRound('Paper'));
+  
+  scissorsButton.addEventListener('click', () => playRound('Scissors'));
 
   function getComputerChoice() {
     let randomNo = Math.floor((Math.random() * 100) + 1);
@@ -49,10 +47,10 @@
     }
   }
 
-
   function playRound(humanChoice) {
 
     const computerChoice = getComputerChoice();
+    console.log(humanChoice)
 
     let resultVar = '';
 
@@ -137,6 +135,7 @@
 
       humanScore = 0;
       computerScore = 0;
+
     }
     else {
   
