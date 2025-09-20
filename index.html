@@ -7,15 +7,17 @@
 </head>
 <body>
 
-  <button class="rock">Rock</button>
-  <button class="paper">Paper</button>
-  <button class="scissors">Scissors</button>
+  <button class="js-rock">Rock</button>
+  <button class="js-paper">Paper</button>
+  <button class="js-scissors">Scissors</button>
+
+  <div class="js-result"></div>
 
 <script>
 
-  const rockButton = document.querySelector('.rock'); 
-  const paperButton = document.querySelector('.paper'); 
-  const scissorsButton = document.querySelector('.scissors');
+  const rockButton = document.querySelector('.js-rock'); 
+  const paperButton = document.querySelector('.js-paper'); 
+  const scissorsButton = document.querySelector('.js-scissors');
   
   rockButton.addEventListener('click', playRound('Rock'))
 
