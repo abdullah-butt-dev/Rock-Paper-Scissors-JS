@@ -7,12 +7,39 @@
 </head>
 <body>
 
-  <button class="js-rock">Rock</button>
-  <button class="js-paper">Paper</button>
-  <button class="js-scissors">Scissors</button>
+  <div class="container">
 
-  <div class="js-result"></div>
-  <div class="js-score"></div>
+    <div class="buttons-container">
+
+      <button class="js-rock">Rock</button>
+      <button class="js-paper">Paper</button>
+      <button class="js-scissors">Scissors</button>
+      
+    </div>
+
+    <div class="option-container">
+
+      <div class="player-option"></div>
+      <div class="computer-option"></div>
+
+    </div>
+
+    <div class="score-container">
+
+      <div class="player-score"></div>
+      <div class="computer-score"></div>
+
+    </div>
+
+    <div class="result-container">
+
+      <div class="js-result"></div>
+
+    </div>
+
+    <div class="js-score"></div>
+    
+  </div>
 
 <script>
 
@@ -50,7 +77,6 @@
   function playRound(humanChoice) {
 
     const computerChoice = getComputerChoice();
-    console.log(humanChoice)
 
     let resultVar = '';
 
