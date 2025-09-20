@@ -12,6 +12,7 @@
   <button class="js-scissors">Scissors</button>
 
   <div class="js-result"></div>
+  <div class="js-score"></div>
 
 <script>
 
@@ -19,6 +20,7 @@
   const paperButton = document.querySelector('.js-paper'); 
   const scissorsButton = document.querySelector('.js-scissors');
   const result = document.querySelector('.js-result');
+  const score = document.querySelector('.js-score');
   
   rockButton.addEventListener('click', playRound('Rock'))
 
@@ -102,6 +104,9 @@
   (resultVar === 'win' || resultVar === 'lose')
     ? `You ${resultVar}! You selected ${humanChoice}. Computer selected ${computerChoice}.`
     : `Tie! Both players selected ${computerChoice}.`;
+  
+  score.textContent = 
+    `Your Score - ${humanScore} Computer Score - ${computerScore}`;
     
   }
 
