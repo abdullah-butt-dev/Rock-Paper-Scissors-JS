@@ -62,7 +62,9 @@
 
   }
 
-  function playRound(humanChoice, computerChoice) {
+  function playRound(humanChoice) {
+
+    const computerChoice = getComputerChoice();
 
     if((humanChoice === "Rock" && computerChoice === "Rock") 
     || (humanChoice === "Paper" && computerChoice === "Paper") 
