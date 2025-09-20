@@ -32,7 +32,6 @@
   let humanScore = 0;
   let computerScore = 0;
 
-  playGame();
 
   function getComputerChoice() {
     let randomNo = Math.floor((Math.random() * 100) + 1);
@@ -62,72 +61,91 @@
     || (humanChoice === "Scissors" && computerChoice === "Scissors")) {
 
       resultVar = 'tie';
+
     }
     
     else if(humanChoice === "Rock" && computerChoice === "Paper") {
-      computerScore++;
 
+      computerScore++;
       resultVar = 'lose';
+
     }
     
     else if(humanChoice === "Rock" && computerChoice === "Scissors") {
-      humanScore++;
 
+      humanScore++;
       resultVar = 'win';
+
     }
     
     else if(humanChoice === "Paper" && computerChoice === "Scissors") {
-      computerScore++;
 
+      computerScore++;
       resultVar = 'lose';
+
     }
     
     else if(humanChoice === "Paper" && computerChoice === "Rock") {
-      humanScore++;
 
+      humanScore++;
       resultVar = 'win';
+
     }
     
     else if(humanChoice === "Scissors" && computerChoice === "Rock") {
-      computerScore++;
 
+      computerScore++;
       resultVar = 'lose';
+
     }
     
     else if(humanChoice === "Scissors" && computerChoice === "Paper") {
+
       humanScore++;
-
       resultVar = 'win';
+
     }
   
-  result.textContent = 
-  (resultVar === 'win' || resultVar === 'lose')
-    ? `You ${resultVar}! You selected ${humanChoice}. Computer selected ${computerChoice}.`
-    : `Tie! Both players selected ${computerChoice}.`;
+  displayResult(humanChoice, computerChoice, resultVar);  
   
-  score.textContent = 
-    `Your Score - ${humanScore} Computer Score - ${computerScore}`;
-    
-  }
+}
 
-  function playGame() {
-
+  function displayResult(humanChoice, computerChoice, resultVar) {
     
-    const humanChoice = getHumanChoice();
-    const computerChoice = getComputerChoice();
-    playRound(humanChoice, computerChoice);      
-    
+    if(humanScore === 5 || computerScore === 5) {
 
-    if(humanScore > computerScore) {
-      console.log(`Congratulations! You win the game.`);
+      if(humanScore > computerScore) {
+
+        score.textContent = `Congratulations! You win the game. 
+        Your Score - ${humanScore} Computer Score - ${computerScore}`;
+
+      }
+
+      else if(humanScore < computerScore) {
+
+        score.textContent = `Better luck next time! Computer win the game. 
+        Your Score - ${humanScore} Computer Score - ${computerScore}`;       
+
+      }
+
+      else {
+
+        score.textContent = `It's a TIE!.
+        Your Score - ${humanScore} Computer Score - ${computerScore}`;               
+
+      }
+
+      humanScore = 0;
+      computerScore = 0;
     }
-
-    else if(humanScore < computerScore) {
-      console.log(`Better luck next time! Computer win the game.`);  
-    }
-
     else {
-      console.log(`It's a TIE!.`);  
+  
+    result.textContent = 
+    (resultVar === 'win' || resultVar === 'lose')
+      ? `You ${resultVar}! You selected ${humanChoice}. Computer selected ${computerChoice}.`
+      : `Tie! Both players selected ${computerChoice}.`; 
+
+      score.textContent = `Your Score - ${humanScore} Computer Score - ${computerScore}`;
     }
   }
 
