@@ -18,6 +18,7 @@
   const rockButton = document.querySelector('.js-rock'); 
   const paperButton = document.querySelector('.js-paper'); 
   const scissorsButton = document.querySelector('.js-scissors');
+  const result = document.querySelector('.js-result');
   
   rockButton.addEventListener('click', playRound('Rock'))
 
@@ -68,42 +69,56 @@
 
     const computerChoice = getComputerChoice();
 
+    let resultVar = '';
+
     if((humanChoice === "Rock" && computerChoice === "Rock") 
     || (humanChoice === "Paper" && computerChoice === "Paper") 
     || (humanChoice === "Scissors" && computerChoice === "Scissors")) {
-      console.log(`Tie! ${humanChoice} = ${computerChoice}`);
-    }
 
+      resultVar = 'tie';
+    }
+    
     else if(humanChoice === "Rock" && computerChoice === "Paper") {
       computerScore++;
-      console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
-    }
 
+      resultVar = 'lose';
+    }
+    
     else if(humanChoice === "Rock" && computerChoice === "Scissors") {
       humanScore++;
-      console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-    }
 
+      resultVar = 'win';
+    }
+    
     else if(humanChoice === "Paper" && computerChoice === "Scissors") {
       computerScore++;
-      console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
-    }
 
+      resultVar = 'lose';
+    }
+    
     else if(humanChoice === "Paper" && computerChoice === "Rock") {
       humanScore++;
-      console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-    }
 
+      resultVar = 'win';
+    }
+    
     else if(humanChoice === "Scissors" && computerChoice === "Rock") {
       computerScore++;
-      console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
-    }
 
+      resultVar = 'lose';
+    }
+    
     else if(humanChoice === "Scissors" && computerChoice === "Paper") {
       humanScore++;
-      console.log(`You win! ${humanChoice} beats ${computerChoice}`);
-    }
 
+      resultVar = 'win';
+    }
+  
+  result.textContent = 
+  (resultVar === 'win' || resultVar === 'lose')
+    ? `You ${resultVar}! You selected ${humanChoice}. Computer selected ${computerChoice}.`
+    : `Tie! Both players selected ${computerChoice}.`;
+    
   }
 
   function playGame() {
