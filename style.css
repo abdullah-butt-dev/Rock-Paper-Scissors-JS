@@ -14,9 +14,27 @@ body {
 }
 
 .container {
-  height: 300px;
-  width: 250px;
+  height: 320px;
+  width: 270px;
   background-color: rgb(65, 65, 65);
   display: flex;
   flex-direction: column;
+}
+
+.buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+}
+
+.button {
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 16px;
+  cursor: pointer;
 }
