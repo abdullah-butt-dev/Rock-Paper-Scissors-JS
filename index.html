@@ -89,11 +89,11 @@
 
     function playGame() {
 
-      for(let i = 1; i <= 5; i++) {
-        const humanChoice = getHumanChoice();
-        const computerChoice = getComputerChoice();
-        playRound(humanChoice, computerChoice);      
-      }
+      
+      const humanChoice = getHumanChoice();
+      const computerChoice = getComputerChoice();
+      playRound(humanChoice, computerChoice);      
+      
 
       if(humanScore > computerScore) {
         console.log(`Congratulations! You win the game.`);
