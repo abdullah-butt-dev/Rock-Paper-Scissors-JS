@@ -14,8 +14,8 @@ body {
 }
 
 .container {
-  height: 320px;
-  width: 270px;
+  height: 280px;
+  width: 320px;
   background-color: rgb(65, 65, 65);
   display: flex;
   flex-direction: column;
@@ -38,3 +38,34 @@ body {
   font-size: 16px;
   cursor: pointer;
 }
+
+.option-container, .score-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 3px;
+  margin-bottom: 20px;
+}
+
+.player, .computer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player {
+  width: 48%;
+  color: black;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.computer {
+  width: 48%;
+  color: black;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+} 
+
