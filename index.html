@@ -22,12 +22,12 @@
 
       <div class="player">
         <p>Player Option</p>
-        <div class="player-option">None</div>
+        <div class="js-player-option">None</div>
       </div>
       
       <div class="computer">
         <p>Computer Option</p>
-        <div class="computer-option">None</div>
+        <div class="js-computer-option">None</div>
       </div>
 
     </div>
@@ -36,12 +36,12 @@
 
       <div class="player">
         <p>Player Score</p>
-        <div class="player-score">0</div>
+        <div class="js-player-score">0</div>
       </div>
       
       <div class="computer">
         <p>Computer Score</p>
-        <div class="computer-score">0</div>
+        <div class="js-computer-score">0</div>
       </div>
 
     </div>
@@ -49,11 +49,9 @@
     <div class="result-container">
 
       <div>Result</div>
-      <div class="js-result">None</div>
+      <div class="result js-result">None</div>
 
     </div>
-
-    <div class="js-score"></div>
     
   </div>
 
@@ -62,8 +60,11 @@
   const rockButton = document.querySelector('.js-rock'); 
   const paperButton = document.querySelector('.js-paper'); 
   const scissorsButton = document.querySelector('.js-scissors');
+  const playOption = document.querySelector('.js-player-option');
+  const compOption = document.querySelector('.js-computer-option');
+  const playScore = document.querySelector('.js-player-score');
+  const compScore = document.querySelector('.js-computer-score');
   const result = document.querySelector('.js-result');
-  const score = document.querySelector('.js-score');
   
   let humanScore = 0;
   let computerScore = 0;
@@ -151,27 +152,30 @@
 }
 
   function displayResult(humanChoice, computerChoice, resultVar) {
+
+    playOption.textContent = `${humanChoice}`;
+    compOption.textContent = `${computerChoice}`;
+
+    playScore.textContent = `${humanScore}`;
+    compScore.textContent = `${computerScore}`;
     
     if(humanScore === 5 || computerScore === 5) {
 
       if(humanScore > computerScore) {
 
-        score.textContent = `Congratulations! You win the game. 
-        Your Score - ${humanScore} Computer Score - ${computerScore}`;
+        result.textContent = `You win the game!`;
 
       }
 
       else if(humanScore < computerScore) {
 
-        score.textContent = `Better luck next time! Computer win the game. 
-        Your Score - ${humanScore} Computer Score - ${computerScore}`;       
+        result.textContent = `Computer win the game!`;       
 
       }
 
       else {
 
-        score.textContent = `It's a TIE!.
-        Your Score - ${humanScore} Computer Score - ${computerScore}`;               
+        result.textContent = `It's a TIE!`;               
 
       }
 
@@ -183,10 +187,9 @@
   
     result.textContent = 
     (resultVar === 'win' || resultVar === 'lose')
-      ? `You ${resultVar}! You selected ${humanChoice}. Computer selected ${computerChoice}.`
-      : `Tie! Both players selected ${computerChoice}.`; 
+      ? `${resultVar}!`
+      : `tie!`; 
 
-      score.textContent = `Your Score - ${humanScore} Computer Score - ${computerScore}`;
     }
   }
 
